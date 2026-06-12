@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Lauf-Animation der Spielfigur (leichtes Wippen) */
+@keyframes walk-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.player-walking {
+  animation: walk-bob 0.32s ease-in-out infinite;
+}
+
+/* Gras-Textur über CSS – keine externen Assets */
+.grass-tile {
+  background-color: #4ade80;
+  background-image:
+    radial-gradient(circle at 25% 30%, #22c55e 1.5%, transparent 2.5%),
+    radial-gradient(circle at 70% 65%, #22c55e 1.5%, transparent 2.5%),
+    radial-gradient(circle at 45% 85%, #22c55e 1%, transparent 2%);
+}
+
+.path-tile {
+  background-color: #d6cfc0;
+  background-image: radial-gradient(circle at 35% 45%, #c4bcab 8%, transparent 12%);
+}
